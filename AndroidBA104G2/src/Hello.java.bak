@@ -1,0 +1,17 @@
+//package servlet_examples;
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class Hello extends HttpServlet {
+
+  public void doGet(HttpServletRequest req, HttpServletResponse res)
+                               throws ServletException, IOException {
+   
+  }
+  public String getServletInfo() {
+    return "A servlet that knows the name of the person to whom it's" + 
+           "saying hello";
+  }
+}

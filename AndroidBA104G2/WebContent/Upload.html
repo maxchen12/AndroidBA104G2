@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Big5">
+<TITLE>Upload.html</TITLE>
+</HEAD>
+<BODY >
+
+  <FORM action="uploadServlet3.do" method=post enctype="multipart/form-data">
+        <input type="file" name="upfile1">
+        <br>
+        <input type="file" name="upfile2">
+        
+        <input type="submit" value="submit">
+  </FORM>
+  	<br>
+	<div id="pic_upfile1"></div>
+	<div id="pic_upfile2"></div>
+	
+	<script>
+
+
+	function showImage(e){
+
+		
+		if(window.navigator.userAgent.indexOf("MSIE")>=1){
+            
+			var picName = this.value;
+			picName = picName.substring(picName.lastIndexOf("\\")+1, picName.length);
+			var div_pic = document.getElementById("pic_"+this.name);
+			div_pic.innerHTML = picName + "<br><img src='" + this.value + "'>";
+			 
+        }
+        else{
+			
+        	var file = e.target;
+    		var div_pic = document.getElementById("pic_" + file.name);
+    		var picName = file.value;
+    			picName = picName.substring(picName.lastIndexOf("\\")+1, picName.length);
+
+			var reader = new FileReader();
+			
+			
+			reader.onload = function (oFREvent) {
+			    var src = oFREvent.target.result;
+			    div_pic.innerHTML = picName+"<br>"+"<img src='" + src + "'>" ;
+			};
+
+			reader.readAsDataURL(file.files[0]);
+		}
+	}
+	window.onload = function(){
+		var file1 = document.getElementsByName("upfile1");
+		var file2 = document.getElementsByName("upfile2");
+		file1[0].onchange = showImage;
+		file2[0].onchange = showImage;
+	};
+
+
+	</script>
+</BODY>
+</HTML>

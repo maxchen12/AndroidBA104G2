@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- �H�U�� Servlet2.3 �B Servlet2.4 �B Servlet2.5 �B Servlet3.0 �U��Servlet���������p�y�z�� web.xml �����h����-->
+
+<!--
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+-->
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+
+
+	  <resource-ref>
+		    <description>DB Connection</description>
+		    <res-ref-name>jdbc/TestDB</res-ref-name>
+		    <res-type>javax.sql.DataSource</res-type>
+		    <res-auth>Container</res-auth>
+	  </resource-ref>
+
+
+    <servlet>                           <!-- �w�g�L�k�H���U�W��(http://localhost:8081/IBM/servlet/hi)���覡����,�]��Invoker servlet���\��bTomcat 7.x �w�g�Q���� -->
+        <servlet-name>hi</servlet-name>
+        <servlet-class>HelloWorld</servlet-class>
+    </servlet>
+                         
+    <servlet-mapping>                   <!-- ���T���� http://localhost:8081/IBM/hello.html -->
+        <servlet-name>hi</servlet-name>
+        <url-pattern>/hello.html</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>                   <!-- �e�m���|���� http://localhost:8081/IBM/hello.html/xxxxx -->
+        <servlet-name>hi</servlet-name>
+        <url-pattern>/hello.html/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>                   <!-- �����ɦW���� http://localhost:8081/IBM/xxx/yyy/zzz.mm-->
+        <servlet-name>hi</servlet-name>
+        <url-pattern>*.mm</url-pattern>
+    </servlet-mapping>
+    
+    
+  
+    <servlet>
+		    <servlet-name>HelloWorld</servlet-name>
+		    <servlet-class>HelloWorld</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+		    <servlet-name>HelloWorld</servlet-name>
+		    <url-pattern>/HelloWorld</url-pattern>
+	  </servlet-mapping>
+    
+    
+
+    <servlet>
+		    <servlet-name>Hello</servlet-name>
+		    <servlet-class>Hello</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+		    <servlet-name>Hello</servlet-name>
+		    <url-pattern>/Hello</url-pattern>
+	  </servlet-mapping>
+	  
+	 
+	   <servlet>
+		    <servlet-name>HelloGet</servlet-name>
+		    <servlet-class>HelloGet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+		    <servlet-name>HelloGet</servlet-name>
+		    <url-pattern>/HelloGet</url-pattern>
+	  </servlet-mapping>
+
+
+<servlet>
+		    <servlet-name>MyOrder</servlet-name>
+		    <servlet-class>MyOrder</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+		    <servlet-name>MyOrder</servlet-name>
+		    <url-pattern>/MyOrder</url-pattern>
+	  </servlet-mapping>
+	  
+	  <servlet>
+		    <servlet-name>MyStorage</servlet-name>
+		    <servlet-class>MyStorage</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+		    <servlet-name>MyStorage</servlet-name>
+		    <url-pattern>/MyStorage</url-pattern>
+	  </servlet-mapping>
+	  
+	  <servlet>
+		    <servlet-name>MyStoreList</servlet-name>
+		    <servlet-class>MyStoreList</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+		    <servlet-name>MyStoreList</servlet-name>
+		    <url-pattern>/MyStoreList</url-pattern>
+	  </servlet-mapping>
+    
+    
+      <servlet>
+		    <servlet-name>MyProductList</servlet-name>
+		    <servlet-class>MyProductList</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+		    <servlet-name>MyProductList</servlet-name>
+		    <url-pattern>/MyProductList</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  
+	  <servlet>
+		    <servlet-name>Login</servlet-name>
+		    <servlet-class>com.android.login.controller.Login</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+		    <servlet-name>Login</servlet-name>
+		    <url-pattern>/android/Login</url-pattern>
+	  </servlet-mapping>
+	  
+	  <servlet>
+	  	<description>
+	  	</description>
+	  	<display-name>GetImg</display-name>
+	  	<servlet-name>GetImg</servlet-name>
+	  	<servlet-class>com.android.tool.GetImg</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+	  	<servlet-name>GetImg</servlet-name>
+	  	<url-pattern>/android/GetImg</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  
+	  <servlet>
+		    <servlet-name>KeepRecord</servlet-name>
+		    <servlet-class>com.android.keep_record.controller.KeepRecord</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+		    <servlet-name>KeepRecord</servlet-name>
+		    <url-pattern>/android/KeepRecord</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  <servlet>
+		    <servlet-name>Order</servlet-name>
+		    <servlet-class>com.android.order.controller.Order</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+		    <servlet-name>Order</servlet-name>
+		    <url-pattern>/android/Order</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  <servlet>
+		    <servlet-name>Product</servlet-name>
+		    <servlet-class>com.android.product.controller.Product</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+		    <servlet-name>Product</servlet-name>
+		    <url-pattern>/android/Product</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  <servlet>
+		    <servlet-name>Comment</servlet-name>
+		    <servlet-class>com.android.comment.controller.Comment</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+		    <servlet-name>Comment</servlet-name>
+		    <url-pattern>/android/Comment</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  <servlet>
+		    <servlet-name>Favorite</servlet-name>
+		    <servlet-class>com.android.favorite.controller.Favorite</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+		    <servlet-name>Favorite</servlet-name>
+		    <url-pattern>/android/Favorite</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  
+	  <servlet>
+	  	<description>
+	  	</description>
+	  	<display-name>Ice</display-name>
+	  	<servlet-name>Ice</servlet-name>
+	  	<servlet-class>com.android.ice.controller.Ice</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+	  	<servlet-name>Ice</servlet-name>
+	  	<url-pattern>/android/Ice</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  <servlet>
+	  	<description>
+	  	</description>
+	  	<display-name>Sweetness</display-name>
+	  	<servlet-name>Sweetness</servlet-name>
+	  	<servlet-class>com.android.sweetness.controller.Sweetness</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+	  	<servlet-name>Sweetness</servlet-name>
+	  	<url-pattern>/android/Sweetness</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  
+	  <servlet>
+	  	<description>
+	  	</description>
+	  	<display-name>Extra</display-name>
+	  	<servlet-name>Extra</servlet-name>
+	  	<servlet-class>com.android.extra.controller.Extra</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+	  	<servlet-name>Extra</servlet-name>
+	  	<url-pattern>/android/Extra</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  
+	  <servlet>
+	  	<description>
+	  	</description>
+	  	<display-name>OrderDetail</display-name>
+	  	<servlet-name>OrderDetail</servlet-name>
+	  	<servlet-class>com.android.order_detail.controller.OrderDetail</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+	  	<servlet-name>OrderDetail</servlet-name>
+	  	<url-pattern>/android/OrderDetail</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  <servlet>
+	  	<description>
+	  	</description>
+	  	<display-name>Friend</display-name>
+	  	<servlet-name>Friend</servlet-name>
+	  	<servlet-class>com.android.friend.controller.Friend</servlet-class>
+	  </servlet>
+	  
+	  
+	  <servlet-mapping>
+	  	<servlet-name>Friend</servlet-name>
+	  	<url-pattern>/android/Friend</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  
+	  <servlet>
+	  	<description>
+	  	</description>
+	  	<display-name>Store</display-name>
+	  	<servlet-name>Store</servlet-name>
+	  	<servlet-class>com.android.store.controller.Store</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+	  	<servlet-name>Store</servlet-name>
+	  	<url-pattern>/android/Store</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  
+  <context-param>
+    <param-name>org.apache.tomcat.websocket.textBufferSize</param-name>
+    <param-value>6072000</param-value>
+  </context-param>
+  
+  
+</web-app>
+
+
